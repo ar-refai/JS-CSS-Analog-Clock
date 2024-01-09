@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Analog Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <style></style>
+</head>
+<body>
+
+    <section class="container">
+        <div class="clock">
+            <div class="fog1"></div>
+            <div class="fog2"></div>
+            <div class="clock-frame"></div>
+            <div class="hand hours-hand"></div>
+            <div class="hand minutes-hand"></div>
+            <div class="hand seconeds-hand"></div>
+        </div>
+    </section>
+
+    <script>
+        const seconedsHand = document.querySelector('.seconeds-hand');
+        const minutesHand = document.querySelector('.minutes-hand');
+        const hoursHand = document.querySelector('.hours-hand');
+
+        function setDate() {
+            const date = new Date();
+            const seconeds =  date.getSeconds();
+            const seconedsDegree = (seconeds / 60) * 360 + 90
+            seconedsHand.style.transform = `rotate(${seconedsDegree}deg)`;
+
+            const mins = date.getMinutes();
+            const minsDegree = (mins / 60) * 360 + 90
+            minutesHand.style.transform = `rotate(${minsDegree}deg)`;
+
+            const hours = date.getHours();
+            const hoursDegree = (hours / 12) * 360 + 90
+            hoursHand.style.transform = `rotate(${hoursDegree}deg)`;
+
+        }
+
+        setInterval(setDate,1000);
+    </script>
+</body>
+</html>
