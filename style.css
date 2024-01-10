@@ -121,7 +121,14 @@ h1 span {
     background-image: url(fog2.png);
     animation: fog2 3s linear infinite;
 }
-
+@keyframes fog1 {
+    0% { opacity: .2; }
+    22% { opacity: .6; }
+    40% { opacity: .38; }
+    58% { opacity: .5; }
+    80% { opacity: .26; }
+    100% { opacity: .2; }
+}
 @-webkit-keyframes fog1 {
     0% { opacity: .2; }
     22% { opacity: .6; }
@@ -131,6 +138,13 @@ h1 span {
     100% { opacity: .2; }
 }
 
+@keyframes fog2 {
+    0% { opacity: .6; }
+    25% { opacity: .3; }
+    50% { opacity: .4; }
+    80% { opacity: .3; }
+    100% { opacity: .6; }
+}
 @-webkit-keyframes fog2 {
     0% { opacity: .6; }
     25% { opacity: .3; }
